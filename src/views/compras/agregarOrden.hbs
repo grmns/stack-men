@@ -1,0 +1,42 @@
+<!-- agregarCompra.hbs -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Orden de Compra</title>
+    <!-- Estilos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Agregar Orden de Compra</h1>
+        
+        <form action="/compras/ordenCompra/agregarOrden" method="POST">
+            <div class="form-group">
+                <label for="proveedor_id">Proveedor</label>
+                <select class="form-control" id="proveedor_id" name="proveedor_id">
+                    <!-- Aquí puedes generar opciones dinámicamente desde la base de datos si es necesario -->
+                    <!-- Por ejemplo: <option value="{{proveedor.id}}">{{proveedor.nombre}}</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="number" class="form-control" id="total" name="total" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Orden de Compra</button>
+        </form>
+    </div>
+
+    <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Script de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

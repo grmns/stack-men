@@ -1,0 +1,55 @@
+<!-- views/ventas/clientes.hbs -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <!-- Estilos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Lista de Clientes</h1>
+        
+        <!-- Botón para agregar cliente -->
+        <a href="/ventas/clientes/agregarCliente" class="btn btn-primary mt-3 mb-3">Agregar Cliente</a>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th> <!-- Columna para acciones -->
+                </tr>
+            </thead>
+            <tbody>
+                {{#each clientes}}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.nombre}}</td>
+                        <td>{{this.apellido}}</td>
+                        <td>{{this.email}}</td>
+                        <td>{{this.telefono}}</td>
+                        <!-- Agregar enlaces para editar y eliminar el cliente -->
+                        <td>
+                            <a href="/ventas/clientes/editar/{{this.id}}" class="btn btn-primary">Editar</a>
+                            <a href="/ventas/clientes/eliminar/{{this.id}}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Scripts de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Script de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
